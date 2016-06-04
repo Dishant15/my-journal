@@ -5,7 +5,7 @@ export default class Paginator extends React.Component {
 		return(
 			<ul class="pager">
                 <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
+                    <a>Next</a>
                 </li>
             </ul>
 		);

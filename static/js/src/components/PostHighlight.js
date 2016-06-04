@@ -1,12 +1,23 @@
 import React from 'react';
+import Paginator from './Paginator';
+import Navbar from './Navbar';
 
 export class PostList extends React.Component {
 	render(){
 		
 		return(
 			<div>
-				<PostSummery/>
-				<hr/>
+				<Navbar/>
+				<div class="container">
+			        <div class="row">
+			            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+							<PostSummery/>
+							<hr/>
+							<Paginator/>
+							<hr/>
+	  			        </div>
+			        </div>
+			    </div>
 			</div>
 		);
 	}

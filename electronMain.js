@@ -20,7 +20,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  win.loadURL(`file://${__dirname}/template/index.html`);
+  win.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
   win.webContents.openDevTools();
@@ -77,3 +77,5 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+module.exports = app;

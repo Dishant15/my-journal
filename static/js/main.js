@@ -4,11 +4,19 @@ require('./src/clean-blog.min.js');
 
 import ReactDom from 'react-dom';
 import React from 'react';
+import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import Layout from './src/components/Layout';
+import PostDetail from './src/components/PostDetails';
+import { PostList } from './src/components/PostHighlight';
 
 const app = document.getElementById('app');
 
 ReactDom.render(
-	<Layout/>,
+	<Router history={hashHistory}>
+		<Route path="/" component={Layout}>
+			<IndexRoute component={PostList}/>
+			<Route path="post" component={PostDetail}/>
+		</Route>
+	</Router>,
 app);

@@ -6,6 +6,7 @@ module.exports = {
   context: __dirname,
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./static/js/main.js",
+
   module: {
     loaders: [
       {
@@ -19,13 +20,15 @@ module.exports = {
       }
     ]
   },
+
   output: {
-    path: __dirname + "/template/js/",
+    path: __dirname + "/static/js/",
     filename: "main.min.js"
   },
+
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+  ]
 };
