@@ -8,6 +8,7 @@ import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import Layout from './src/components/Layout';
 import PostDetail from './src/components/PostDetails';
+import AddPost from './src/components/AddPost';
 import { PostList } from './src/components/PostHighlight';
 
 const app = document.getElementById('app');
@@ -17,6 +18,7 @@ ReactDom.render(
 		<Route path="/" component={Layout}>
 			<IndexRoute component={PostList}/>
 			<Route path="post" component={PostDetail}/>
+			<Route path="addpost" component={AddPost}/>
 		</Route>
 	</Router>,
 app);

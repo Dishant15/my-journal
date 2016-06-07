@@ -11,7 +11,7 @@ let win;
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600});
+  win = new BrowserWindow({fullscreen:true});
 
   // open external urls ( with target="_blank" ) in user browser
   win.webContents.on('new-window', function(e, url) {

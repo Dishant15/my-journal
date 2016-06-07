@@ -26,7 +26,7 @@ class Nav extends React.Component {
                                 <Link to="post">See Post</Link>
                             </li>
                             <li>
-                                <a href="post.html">Add Entry</a>
+                                <Link to="addpost">New Entry</Link>
                             </li>
                             <li>
                                 <a href="contact.html">Search</a>
@@ -41,8 +41,9 @@ class Nav extends React.Component {
 
 class Header extends React.Component {
     render(){
+        var inimg = this.props.bgimg;
         var Bgimage = {
-                backgroundImage: 'url(static/img/home-bg.jpg)'
+                backgroundImage: 'url(static/img/' + inimg + ')'
             };
 
         return(
@@ -68,7 +69,7 @@ export default class Navbar extends React.Component {
         return(
             <div>
                 <Nav/>
-                <Header title="My Journal" subtitle="Stay Hungry, Stay Foolish."/>
+                <Header title={this.props.title} subtitle={this.props.subtitle} bgimg={this.props.bgimg}/>
             </div>
         );
     }
