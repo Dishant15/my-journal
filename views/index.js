@@ -25,13 +25,13 @@ var jsonfile = require('jsonfile');
 // }
 
 
-router.get('/', function(req, res) {
+router.get('/post/details/:postid', function(req, res) {
 
-	db.find({
-		
-	}, function(err, data){
-		res.json(data);
-	})
+	var file = 'data/posts/' + req.params.postid + '.json';
+	jsonfile.readFile(file, function(err, obj) {
+
+		res.json(obj);
+	});
 });
 
 router.get('/post/list', function (req, res) {
@@ -55,6 +55,5 @@ router.post('/post/add', function (req, res) {
 		});
 	});
 });
-
 
 module.exports = router;

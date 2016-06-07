@@ -29,7 +29,7 @@ class Nav extends React.Component {
                                 <Link to="addpost">New Entry</Link>
                             </li>
                             <li>
-                                <a href="contact.html">Search</a>
+                                <a>Search</a>
                             </li>
                         </ul>
                     </div>

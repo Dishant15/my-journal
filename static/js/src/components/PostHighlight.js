@@ -1,6 +1,7 @@
 import React from 'react';
 import Paginator from './Paginator';
 import Navbar from './Navbar';
+import { Link } from "react-router";
 
 import $ from '../jquery.min.js';
 
@@ -32,7 +33,7 @@ export class PostList extends React.Component {
 		if(this.state.data) {
 			postlist = this.state.data.map(function(datum) {
 			        	return (<div key={datum._id}>
-			        				<PostSummery data={datum}/>
+			        				<PostSummery postid={datum._id} data={datum}/>
 			        				<hr/>
 			        			</div>);
 			        });
@@ -61,14 +62,14 @@ export class PostSummery extends React.Component {
 	render(){
 		return(
 			<div class="post-preview">
-                <a href="post.html">
+                <Link to={"post/" + this.props.postid}>
                     <h2 class="post-title">
                         {this.props.data.title}
                     </h2>
                     <h3 class="post-subtitle">
                         {this.props.data.tags}
                     </h3>
-                </a>
+                </Link>
                 <p class="post-meta">Posted on <a href="#">{this.props.data.date}</a> {this.props.data.time}</p>
             </div>
 		);

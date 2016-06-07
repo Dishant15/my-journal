@@ -39,22 +39,17 @@ export default class PostDetail extends React.Component {
 
 	componentDidMount() {
 
-		var setData = (function(data) {
+		var postid = this.props.params.postid;
+
+		var setData = (data) => {
 			// change state data with this new data
 			this.setState({post:data});
-		}).bind(this);
+		};
 
-		setData({
-			title: "This is just a test title.",
-			today: "Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.",
-			tomorrow: "There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.",
-			quote:"The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.",
-			conclusion:"As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man."
-		})
-		// $.ajax({
-		// 	method: "GET",
-		// 	url: 'http://localhost:3000/post/list',
-		// }).done(setData);
+		$.ajax({
+			method: "GET",
+			url: 'http://localhost:3000/post/details/' + postid,
+		}).done(setData);
 	}
 
 	render(){
@@ -67,7 +62,7 @@ export default class PostDetail extends React.Component {
 
 		return(
 			<div>
-				<Navbar bgimg={bgimg} title={this.state.post.title} />
+				<Navbar bgimg={bgimg} title="Date of today" subtitle={this.state.post.title} />
 
 				{post}
 
