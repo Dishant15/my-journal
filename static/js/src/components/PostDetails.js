@@ -62,7 +62,7 @@ export default class PostDetail extends React.Component {
 
 		return(
 			<div>
-				<Navbar bgimg={bgimg} title="Date of today" subtitle={this.state.post.title} />
+				<Navbar bgimg={bgimg} title={this.state.post.date} subtitle={this.state.post.title} />
 
 				{post}
 

@@ -60,6 +60,11 @@ export class PostList extends React.Component {
 
 export class PostSummery extends React.Component {
 	render(){
+		var tags;
+		if(this.props.data.tags){
+			tags = '#' + this.props.data.tags.join(' #');
+		}
+
 		return(
 			<div class="post-preview">
                 <Link to={"post/" + this.props.postid}>
@@ -67,10 +72,10 @@ export class PostSummery extends React.Component {
                         {this.props.data.title}
                     </h2>
                     <h3 class="post-subtitle">
-                        {this.props.data.tags}
+                        {tags}
                     </h3>
                 </Link>
-                <p class="post-meta">Posted on <a href="#">{this.props.data.date}</a> {this.props.data.time}</p>
+                <p class="post-meta">Posted on <a href="#">{this.props.data.show_date}</a></p>
             </div>
 		);
 	}

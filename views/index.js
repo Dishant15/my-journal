@@ -41,14 +41,23 @@ router.get('/post/list', function (req, res) {
 });
 
 router.post('/post/add', function (req, res) {
+	var tags;
+	if(req.body.tags){
+		tags = req.body.tags.split(",").map(function(elem) {
+			return elem.trim();
+		});
+	}
+	var date = new Date();
 	var highlightData = {
 		title: req.body.title,
-		tags: req.body.tags,
-		date: new Date()
+		tags: tags,
+		date: date,
+		show_date : date.toDateString()
 	};
+	req.body.tags = tags;
+	req.body.date = date.toDateString();
 	db.insert(highlightData, function(err, data) {
 		var file =  'data/posts/' + data._id + '.json';
-		console.log(file);
 		jsonfile.writeFile(file, req.body, {spaces: 4}, function (err) {
 			console.log(err);
 			res.json({success:true});

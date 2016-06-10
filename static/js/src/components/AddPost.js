@@ -107,7 +107,7 @@ class Form extends React.Component {
 		                        <div class="form-group col-xs-12 floating-label-form-group controls">
 		                            <label>Tags</label>
 		                            <input type="text" class="form-control" placeholder="Tags" value={this.state.tags} onChange={this.tagsChange}/>
-		                            <p class="help-block text-danger"></p>
+		                            <p class="help-block text-danger">Comma separeted tags .i.e "Amazing, Inspirational"</p>
 		                        </div>
 		                    </div>
 		                    <div class="row control-group">
