@@ -23,7 +23,7 @@ function createWindow() {
   win.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -36,9 +36,9 @@ function createWindow() {
   // Create the Application's main menu
   var template = [
       {
-        label: "Application",
+        label: "MyJournal",
         submenu: [
-            { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+            { label: "About MyJournal", selector: "orderFrontStandardAboutPanel:" },
             { type: "separator" },
             { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
       ]}, 

@@ -28,7 +28,11 @@ export class PostList extends React.Component {
 	}
 
 	render(){
-
+		/* 
+		------------ use paginator once it is ready over here ------------
+		<Paginator/>
+		<hr/>
+		*/
 		var postlist;
 		if(this.state.data) {
 			postlist = this.state.data.map(function(datum) {
@@ -48,8 +52,6 @@ export class PostList extends React.Component {
 
 							{postlist}
 
-							<Paginator/>
-							<hr/>
 	  			        </div>
 			        </div>
 			    </div>
