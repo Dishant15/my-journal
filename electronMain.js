@@ -2,6 +2,7 @@ const electron = require('electron');
 // Module to control application life.
 const {app} = electron;
 const {Menu} = electron;
+const {shell} = electron;
 // Module to create native browser window.
 const {BrowserWindow} = electron;
 
@@ -16,7 +17,7 @@ function createWindow() {
   // open external urls ( with target="_blank" ) in user browser
   win.webContents.on('new-window', function(e, url) {
     e.preventDefault();
-    require('shell').openExternal(url);
+    shell.openExternal(url);
   });
 
   // and load the index.html of the app.
